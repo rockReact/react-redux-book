@@ -10,12 +10,12 @@ export default class App extends React.Component {
   }
 
   componentWillMount(){
-    //1.before render 
-    console.log(`1.1 componentWillMount${suffix}`, this);
+    //1.before render . only once
+    console.log(`1.0 componentWillMount${suffix}`, this);
   }
 
   componentDidMount() {
-    //after the first time loaded 
+    //after the first time loaded , only once
     console.log(`1.2 componentDidMount${suffix}`, this);
   }
 
@@ -26,20 +26,21 @@ export default class App extends React.Component {
   }
 
   shouldComponentUpdate() {
-    //when received new props, 
+    //2.1 when received new props, 
     //not be triggered when initilize or forceUpdate 
     //used when not updating app
-    console.log(`shouldComponentUpdate${suffix}`, this);
+    console.log(`2.1 shouldComponentUpdate${suffix}`, this);
     return true;
   }
 
   componentWillUpdate() {
     //when receiving new props and state but before render.
-    console.log(`componentWillUpdate${suffix}`, this);
+    console.log(`2.2 componentWillUpdate${suffix}`, this);
   }
 
   componentDidUpdate() {
-    console.log(`componentDidUpdate${suffix}`, this);
+    //1.3 when reload or updated
+    console.log(`1.3 - 2.3 componentDidUpdate${suffix}`, this);
   }
 
   componentWillUnmount() {
@@ -51,11 +52,12 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(`1.0 in render${suffix}`, this);
+    console.log(`1.1 in render${suffix}`, this);
 
     this.handler();
     window.handler = this.handler;
     window.handler();
+
 
     return (
       <div>

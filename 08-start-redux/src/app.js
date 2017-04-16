@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
 
-//reducer 
+//2. reducer 
+//pure function like: (state, action) => state
 function counter(state = 0, action) {
   switch (action.type) {
     case 'INCREMENT':
@@ -29,9 +30,11 @@ function counter(state = 0, action) {
 //   }
 // }
 
-
+//3. store
+//3.0
 const store = createStore(counter);
 
+//3.1
 let currentValue = store.getState();
 
 const listener = () => {
@@ -41,11 +44,14 @@ const listener = () => {
 };
 
 //listening the changes by subscribe the callback
+//3.2
 store.subscribe(listener);
 
 //you can only change the state by dispatch an action
+//1. action: {type: 'INCREMENT'}
 store.dispatch({ type: 'INCREMENT' });
 
+//4. trigger action
 store.dispatch({ type: 'INCREMENT' });
 
 store.dispatch({ type: 'DECREMENT' });

@@ -22,7 +22,6 @@ window.unmountComponentAtNode = () => {
 
 console.log('JSX中的闭合标签是ReactElement');
 console.log(<h1>hello world</h1>);
-console.log(<App />);
 
 console.log('组件、ReactElement与组件实例');
 console.log(App);
