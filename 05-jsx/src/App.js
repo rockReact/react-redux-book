@@ -57,6 +57,7 @@ function Demo5() {
   const arr = [
     <h3 key={0}>数组</h3>,
     <p key={1}>数组会自动展开。注意，数组中每一项元素需要添加key属性</p>,
+    <p key={2}>数组会自动展开。注意，数组中每一项元素需要添加key属性</p>
   ];
   return (<li>{arr}</li>);
 }

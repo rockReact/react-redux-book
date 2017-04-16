@@ -6,6 +6,7 @@ function Content(props) {
 
 Content.propTypes = {
   value: PropTypes.number.isRequired
+  //P33
 };
 
 export default class Counter extends Component {

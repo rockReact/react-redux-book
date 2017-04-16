@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-function Button(props, context) {
+function Button(props, context) {{1.1}
   return (
-    <button style={{ background: context.color }}>
+    <button style={{ background: context.color }}>{1.2}
       {props.children}
     </button>
   );
@@ -11,7 +11,7 @@ function Button(props, context) {
 Button.propTypes = {
   children: PropTypes.string.isRequired
 };
-
+{1.3}
 Button.contextTypes = {
   color: PropTypes.string.isRequired
 };
@@ -29,7 +29,7 @@ Message.propTypes = {
 };
 
 class MessageList extends Component {
-  getChildContext() {
+  getChildContext() {     {2.1}
     return { color: 'gray' };
   }
 
@@ -51,7 +51,7 @@ class MessageList extends Component {
     );
   }
 }
-
+{2.2}
 MessageList.childContextTypes = {
   color: PropTypes.string.isRequired
 };

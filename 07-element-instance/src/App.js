@@ -10,13 +10,13 @@ export default class App extends React.Component {
   }
 
   componentWillMount(){
-    //before render 
-    console.log(`componentWillMount${suffix}`, this);
+    //1.before render 
+    console.log(`1.1 componentWillMount${suffix}`, this);
   }
 
   componentDidMount() {
     //after the first time loaded 
-    console.log(`componentDidMount${suffix}`, this);
+    console.log(`1.2 componentDidMount${suffix}`, this);
   }
 
   componentWillReceiveProps() {
@@ -43,7 +43,7 @@ export default class App extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log(`componentWillUnmount${suffix}`, this);
+    console.log(`1.4 componentWillUnmount${suffix}`, this);
   }
 
   handler() {
@@ -51,7 +51,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(`in render${suffix}`, this);
+    console.log(`1.0 in render${suffix}`, this);
 
     this.handler();
     window.handler = this.handler;
